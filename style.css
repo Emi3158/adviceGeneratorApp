@@ -1,0 +1,149 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+:root {
+  --primary-clr-1: hsl(193, 38%, 86%); 
+  --primary-clr-2: hsl(150, 100%, 66%);
+  --neutral-clr-1: hsl(217, 19%, 38%);
+  --background-clr: hsl(217, 19%, 24%);
+  --body-clr: hsl(218, 23%, 16%);
+  --text-size: 28px;
+}
+
+@font-face {
+  font-family: Manrope;
+  src: url(https://fonts.google.com/specimen/Manrope);
+  font-weight: 800;
+}
+
+
+body {
+  display: flex;
+  background: var(--body-clr);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 95vw;
+  height: 50vh;
+  background: var(--background-clr);
+  margin: auto;
+  position: relative;
+  border-radius: 6px;
+}
+
+.advice--number {
+  position: absolute;
+  bottom: 85%;
+  font-size: 14px;
+  font-family: "Manrope";
+  letter-spacing: 0.2em;
+  color: var(--primary-clr-2)
+}
+
+#quote {
+  position: absolute;
+  bottom: 50%;
+  color: #fff;
+  text-align: center;
+  font-size: 17px;
+  font-family: "Manrope";
+  font-weight: 600;
+  margin-inline: 1rem;
+}
+
+.divider {
+  display: flex;
+  margin-top: 5.5rem;
+  max-width: 90%;
+}
+
+.dice--circle {
+  display: flex;
+  position: absolute;
+
+  width: 50px;
+  height: 50px;
+  margin-top: 110%;
+
+  background-color: var(--primary-clr-2);
+  border-radius: 50%;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.dice--icon {
+  width: 20px;
+  z-index: 2;
+}
+
+.dice--circle::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--primary-clr-2);
+  border-radius: inherit;
+  z-index: 1;
+  transition: filter 0.6s ease-out;
+}
+
+.dice--circle:hover::before{
+  filter: blur(1.5rem);
+  transition: filter 0.5s ease-in;
+}
