@@ -77,7 +77,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 95vw;
+  width: 95vw;
   height: 50vh;
   background: var(--background-clr);
   margin: auto;
@@ -113,11 +113,11 @@ body {
 
 .dice--circle {
   display: flex;
-  position: absolute;
+  position: fixed;
 
   width: 50px;
   height: 50px;
-  margin-top: 110%;
+  margin-top: 20rem;
 
   background-color: var(--primary-clr-2);
   border-radius: 50%;
@@ -146,4 +146,16 @@ body {
 .dice--circle:hover::before{
   filter: blur(1.5rem);
   transition: filter 0.5s ease-in;
+}
+
+@media (min-width: 750px){
+  .card{
+    max-width: 60vw;
+  }
+}
+
+@media (min-width: 1000px){
+  .card{
+    max-width: 40vw;
+  }
 }
