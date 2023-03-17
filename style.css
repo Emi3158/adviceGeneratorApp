@@ -61,9 +61,9 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 @font-face {
-  font-family: Manrope;
-  src: url(https://fonts.google.com/specimen/Manrope);
-  font-weight: 800;
+  font-family: 'Manrope';
+  src: url('./assets/fonts/manrope-variablefont_wght-webfont.woff') format('woff'),
+       url('./assets/fonts/manrope-variablefont_wght-webfont.woff2') format('woff2');
 }
 
 
@@ -99,9 +99,9 @@ body {
   bottom: 50%;
   color: #fff;
   text-align: center;
-  font-size: 17px;
-  font-family: "Manrope";
-  font-weight: 600;
+  font-size: 28px;
+  font-family: 'Manrope';
+  font-weight: 800;
   margin-inline: 1rem;
 }
 
